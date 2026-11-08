@@ -5,8 +5,16 @@ A modular 3D game engine written in C, targeting Windows, macOS and Linux deskto
 ## Language
 
 **Module**:
-A piece of Ember built as its own dynamic library; a game includes only the modules it uses.
+A piece of Ember built as its own dynamic library that never hot-reloads; an Application includes only the modules it uses.
 _Avoid_: subsystem, plugin, library
+
+**Application**:
+The hot-reloadable library a Host runs: a game or the editor. It is not a Module.
+_Avoid_: app, client, plugin
+
+**Host**:
+The small executable that runs exactly one Application.
+_Avoid_: launcher, runner, player
 
 **Render backend**:
 The implementation of Ember's renderer on one graphics API: Vulkan, Metal or Direct3D 12.
